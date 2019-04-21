@@ -1,0 +1,3 @@
+*** Test Cases ***,${KEY_WORD},${RES_COUNT},[Documentation]
+検索タイプ 1,SeleniumLibrary,9,最初の検索テスト
+検索タイプ 2,hoge,11,次の検索テスト
