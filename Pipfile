@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+
+[packages]
+pyautogui = "*"
+selenium = "*"
+pyobjc-core = "*"
+pyobjc = "*"
+chromedriver-binary = "==73.0.3683.68.0"
+robotframework = "*"
+docutils = "*"
+robotframework-seleniumlibrary = "*"
+robotframework-debuglibrary = "*"
+robotframework-lint = "*"
+robotframework-datadriver = "*"
+
+[requires]
+python_version = "3.7"

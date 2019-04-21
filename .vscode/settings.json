@@ -1,0 +1,24 @@
+{
+    "python.pythonPath": ".venv/bin/python3.7",
+    "cSpell.words": [
+        "chromedriver",
+        "datadriver",
+        "debuglibrary",
+        "docutils",
+        "pipenv",
+        "pyenv",
+        "pyobjc",
+        "rflint",
+        "robotframework",
+        "seleniumlibrary"
+    ],
+    "editor.lineHeight": 16,
+    "editor.fontSize": 14,
+    "editor.fontFamily": "'Osaka-Mono', Menlo, Monaco, 'Courier New', monospace",
+    "files.exclude": {
+        "**/.venv/**": true
+    },
+    "files.watcherExclude": {
+        "**/.venv/**": true
+    }
+}
