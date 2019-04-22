@@ -12,10 +12,12 @@ Test Template   Google検索するテスト
 ${URL}              https://google.co.jp
 
 
+# hard code test cases sample
 # *** Test Cases ***  KEY_WORD            RES_COUNT
 # 検索タイプ1         SeleniumLibrary     9
 # 検索タイプ2         hoge                11
 
+# read test cases from CSV (default values at the end of line)
 *** Test Case ***
 ${KEY_WORD} でGoogle検索し ${RES_COUNT} を確認  Yahoo  10
 
