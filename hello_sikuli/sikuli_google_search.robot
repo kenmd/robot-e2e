@@ -21,7 +21,9 @@ Sikuli Hellow World
 Add Needed Image Path
     Add Image Path              ${IMAGE_DIR}
     Set Show Actions            True
-    Set Min Similarity          0.3     # for debug
+    Set Move Mouse Delay        0.2
+    Set Slow Motion Delay       0.2
+    # Set Min Similarity          0.3     # for debug
 
 Custom Suite Setup
     [Documentation]     Demo dynamically calculate region
@@ -33,29 +35,29 @@ Custom Suite Setup
 
 Demo Click Region and Menu
     # assuming clicking Chrome window
-    Highlight Region            ${MENU_REGION}  1     # demo hard coded region
+    Highlight Region            ${MENU_REGION}  1   # demo hard coded region
     Click Region                ${MENU_REGION}
 
     # not sure Roi is working for Click Text so maybe you don't need this.
     # (at least, the report becomes concise when the result is error.)
     Set Roi                     ${MENU_REGION}
 
-    # select menu is sometimes unstable so better to sleep 1 sec
-    Sleep                       1s
+    # select menu is sometimes unstable so better to sleep a little
+    Sleep                       0.1s
     Click Text                  File
-    Sleep                       1s
+    Sleep                       0.1s
     Click Text                  New Incognito Window
 
     Reset Roi
 
-    Highlight Region            ${CENTER}  1            # demo calculated region
+    Highlight Region            ${CENTER}  1        # demo calculated region
     Click Region                ${CENTER}
     # User input is also possible.
     # @{SelectedRegion} =         Select Region   Please select the region.
 
 Open Google in New Tab
     Click                       chrome_new_tab.png
-    Sleep                       1s
+    Sleep                       0.1s
     Click Text                  Now you can browse privately
     Input Text                  chrome_location_bar.png  https://google.com
     Press Special Key           ENTER
