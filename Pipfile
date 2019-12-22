@@ -18,6 +18,7 @@ robotframework-seleniumlibrary = "*"
 robotframework-debuglibrary = "*"
 robotframework-lint = "*"
 robotframework-datadriver = "*"
+setuptools = "*"
 
 [requires]
 python_version = "3.7"
