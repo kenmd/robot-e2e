@@ -20,6 +20,17 @@ brew cask install chromedriver
 pipenv install
 pipenv shell
 
+# before you run, make sure you can execute chromedriver
+chromedriver --version
+> ChromeDriver 81.0.4044.69
+
+# if you got error, open it
+open $(which chromedriver)
+# then System Preferences > Security & Privacy > Open Anyway
+# details: https://stackoverflow.com/questions/60362018
+
+# Also make sure you have latest version of Chrome
+
 cd hello_robot
 rflint google_search.robot  # lint check
 robot google_search.robot   # run e2e test
@@ -32,26 +43,32 @@ open report.html
 # not sure if it's really necessary for mac users to install these.
 brew install opencv tesseract maven
 opencv_version 
-> 4.1.2
+> 4.3.0
 tesseract --version
-> tesseract 4.1.0
+> tesseract 4.1.1
 
 # pipenv install robotframework-SikuliLibrary will install old version for windows.
 # therefore you need to install locally.
-git clone https://github.com/rainmanwy/robotframework-SikuliLibrary.git ~
+git clone https://github.com/rainmanwy/robotframework-SikuliLibrary.git ~/robotframework-SikuliLibrary
 cd ~/robotframework-SikuliLibrary
 mvn package
+
+cd -  # back to original directory
 
 pipenv install -e ~/robotframework-SikuliLibrary
 
 # you don't need the log file
 export DISABLE_SIKULI_LOG=yes
 
-# assume using Chrome and Google in English version
+# here assume you have opened Chrome and use Google English version
+
 # for reproducibility, open new chrome incognito window before you start.
 cd hello_sikuli
 rflint sikuli_google_search.robot   # lint check (let's not worry about doc error)
 robot sikuli_google_search.robot    # run e2e test
+
+# Note: sometimes it failed when it try to open menu.
+# in such case, please just retry.
 
 open report.html
 ```

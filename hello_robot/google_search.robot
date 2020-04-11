@@ -34,7 +34,7 @@ Google検索するテスト
     [Arguments]         ${KEY_WORD}     ${RES_COUNT}
 
     Input Text  name=q  ${KEY_WORD}
-    Press Key   name=q  \\13
+    Press Keys  name=q  ENTER
 
     Capture Page Screenshot     filename=selenium-screenshot-${KEY_WORD}.png
 
@@ -46,4 +46,11 @@ Google検索するテスト
         \  ${text} =  Get Text  ${link}
         \  Log To Console  ${text}
 
-    Length Should Be   ${links}  ${RES_COUNT}
+    Log To Console      ${RES_COUNT}
+
+    # if you want         use this key word
+    # length equals    -> Length Should Be
+    # length more than -> Get Length and Should Be True
+
+    ${length} =         Get Length  ${links}
+    Should Be True      ${length} >= ${RES_COUNT}

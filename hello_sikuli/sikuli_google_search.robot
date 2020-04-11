@@ -13,12 +13,14 @@ ${CENTER_H} =       300
 
 *** Test Cases ***
 Sikuli Hellow World
+    [Documentation]             Sikuli Sample Test
     Demo Click Region and Menu
     Open Google in New Tab
     Google Search Hello
 
 *** Keywords ***
 Add Needed Image Path
+    [Documentation]             Initial test setup
     Add Image Path              ${IMAGE_DIR}
     Set Show Actions            True
     Set Move Mouse Delay        0.2
@@ -59,11 +61,12 @@ Open Google in New Tab
     Click                       chrome_new_tab.png
     Sleep                       0.1s
     Click Text                  Now you can browse privately
-    Input Text                  chrome_location_bar.png  https://google.com
+    Click Text                  Search Google or type a URL
+    Input Text                  ${EMPTY}  https://google.com
     Press Special Key           ENTER
 
 Google Search Hello
-    Wait Until Screen Contain   google_search_input.png  5
+    Wait Until Screen Contain   google_search_input.png  10
     Input Text                  google_search_input.png  Hello
     Wait Until Screen Contain   google_search_button.png  5
     Click                       google_search_button.png
