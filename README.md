@@ -42,7 +42,7 @@ open report.html
 ```bash
 # not sure if it's really necessary for mac users to install these.
 brew install opencv tesseract maven
-opencv_version 
+opencv_version
 > 4.3.0
 tesseract --version
 > tesseract 4.1.1

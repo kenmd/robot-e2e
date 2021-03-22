@@ -42,9 +42,10 @@ Google検索するテスト
 
     # Debug
 
-    :For  ${link}  IN  @{links}
-        \  ${text} =  Get Text  ${link}
-        \  Log To Console  ${text}
+    FOR  ${link}  IN  @{links}
+        ${text} =  Get Text  ${link}
+        Log To Console  ${text}
+    END
 
     Log To Console      ${RES_COUNT}
 
@@ -53,4 +54,4 @@ Google検索するテスト
     # length more than -> Get Length and Should Be True
 
     ${length} =         Get Length  ${links}
-    Should Be True      ${length} >= ${RES_COUNT}
+    Should Be True      ${length} <= ${RES_COUNT}
