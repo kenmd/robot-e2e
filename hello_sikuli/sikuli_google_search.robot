@@ -48,7 +48,9 @@ Demo Click Region and Menu
     Sleep                       0.1s
     Click Text                  File
     Sleep                       0.1s
-    Click Text                  New Incognito Window
+    Click Text                  New Tab
+    # NOTE: simple words is better for Click Text to recognize correctly
+    # (Click Text often fail to recognize "New Incognito Window")
 
     Reset Roi
 
@@ -68,8 +70,7 @@ Open Google in New Tab
 Google Search Hello
     Wait Until Screen Contain   google_search_input.png  10
     Input Text                  google_search_input.png  Hello
-    Wait Until Screen Contain   google_search_button.png  5
-    Click                       google_search_button.png
+    Press Special Key           ENTER
 
     Wait Until Screen Contain   adele_hello.png  5
     Screen Should Contain       adele_hello.png
